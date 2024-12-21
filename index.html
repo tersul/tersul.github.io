@@ -1,25 +1,317 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>CIaaS | Compliant Infrastructure</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <link rel="icon" href="./favicon.ico" type="image/x-icon">
+  <title>CIaaS®</title>
   <style>
-      .logo {
-      position: absolute;
-      top: 20%;
-      left: 50%;
-      transform: translate(-50%, -50%);
+    /* Basic Reset */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
     }
-    img {
-      width: 50vw;
+
+    body {
+      font-family: Arial, sans-serif;
+      color: #333;
+      line-height: 1.5;
+    }
+
+    /* Top Navigation */
+    .navbar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 1rem 2rem;
+      background: #0F4C81;
+    }
+
+    .navbar .logo {
+      color: #fff;
+      font-size: 1.5rem;
+      font-weight: bold;
+      text-decoration: none;
+    }
+
+    .navbar ul {
+      list-style: none;
+      display: flex;
+      gap: 1rem;
+    }
+
+    .navbar ul li a {
+      color: #fff;
+      text-decoration: none;
+      font-weight: 500;
+    }
+
+    /* Hero Section */
+    .hero {
+      background: url('./hero.svg') no-repeat center center/cover;
+      height: 60vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      color: #fff;
+      padding: 2rem;
+      position: relative;
+    }
+
+    .hero-overlay {
+      position: absolute;
+      top: 0; left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(15, 76, 129, 0.7);
+    }
+
+    .hero-content {
+      position: relative;
+      max-width: 600px;
+    }
+
+    .hero-content h1 {
+      font-size: 2.5rem;
+      margin-bottom: 1rem;
+      font-weight: bold;
+    }
+
+    .hero-content p {
+      font-size: 1.1rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .hero-content a {
+      display: inline-block;
+      background: #FFD700;
+      color: #0F4C81;
+      padding: 0.75rem 1.5rem;
+      text-decoration: none;
+      font-weight: bold;
+      border-radius: 4px;
+    }
+
+    /* Services Section */
+    .services {
+      padding: 3rem 2rem;
+      background: #f9f9f9;
+    }
+
+    .services h2 {
+      text-align: center;
+      font-size: 2rem;
+      margin-bottom: 2rem;
+      color: #0F4C81;
+    }
+
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 2rem;
+    }
+
+    .service-box {
+      background: #fff;
+      border-radius: 8px;
+      padding: 1.5rem;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+      transition: box-shadow 0.2s ease;
+    }
+
+    .service-box:hover {
+      box-shadow: 0 0 15px rgba(0,0,0,0.15);
+    }
+
+    .service-box h3 {
+      font-size: 1.25rem;
+      color: #0F4C81;
+      margin-bottom: 1rem;
+    }
+
+    /* About Section */
+    .about {
+      padding: 3rem 2rem;
+      max-width: 1000px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      gap: 2rem;
+    }
+
+    .about img {
+      width: 40%;
+      border-radius: 8px;
+    }
+
+    .about-content {
+      width: 60%;
+    }
+
+    .about-content h2 {
+      color: #0F4C81;
+      font-size: 2rem;
+      margin-bottom: 1rem;
+    }
+
+    /* Contact / CTA Section */
+    .cta {
+      background: #0F4C81;
+      padding: 3rem 2rem;
+      text-align: center;
+      color: #fff;
+    }
+
+    .cta h2 {
+      font-size: 2rem;
+      margin-bottom: 1rem;
+    }
+
+    .cta a {
+      display: inline-block;
+      margin-top: 1rem;
+      background: #FFD700;
+      color: #0F4C81;
+      padding: 0.75rem 1.5rem;
+      text-decoration: none;
+      font-weight: bold;
+      border-radius: 4px;
+    }
+
+    /* Footer */
+    footer {
+      padding: 1rem 2rem;
+      background: #333;
+      color: #ccc;
+      text-align: center;
+    }
+
+    footer p {
+      margin: 0.5rem 0;
+    }
+
+    @media screen and (max-width: 768px) {
+      .hero-content h1 {
+        font-size: 2rem;
+      }
+      .about {
+        flex-direction: column;
+      }
+      .about img, .about-content {
+        width: 100%;
+      }
     }
   </style>
 </head>
 <body>
-    <div class="logo">
-    <img src="./images/logo.svg" alt="CIaaS logo">
+
+<!-- Navigation -->
+<nav class="navbar">
+  <a class="logo" href="#">CIaaS</a>
+  <ul>
+    <li><a href="#services">Services</a></li>
+    <li><a href="#about">About</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+</nav>
+
+<!-- Hero Section -->
+<section class="hero" id="home">
+  <div class="hero-overlay"></div>
+  <div class="hero-content">
+    <h1>Empowering Your Digital Security</h1>
+    <p>Expert, flexible, and fully independent information security services to protect your organisation—operating outside IR35.</p>
+    <a href="#services">Explore Our Services</a>
+  </div>
+</section>
+
+<!-- Services Section -->
+<section class="services" id="services">
+  <h2>Our Expertise</h2>
+  <div class="services-grid">
+    
+    <!-- 1 -->
+    <div class="service-box">
+      <h3>Security Strategy & Governance</h3>
+      <p>Align security initiatives with business goals. Develop robust governance frameworks and policies to ensure regulatory compliance.</p>
     </div>
+    
+    <!-- 2 -->
+    <div class="service-box">
+      <h3>Risk & Supply Chain Management</h3>
+      <p>Identify, assess, and mitigate both internal and supply chain risks, ensuring resilience across your entire technology stack, partners, and suppliers.</p>
+    </div>
+    
+    <!-- 3 -->
+    <div class="service-box">
+      <h3>Technical Security Architecture</h3>
+      <p>Design secure on-prem, cloud, and hybrid infrastructures following best practices and international standards for robust defence.</p>
+    </div>
+    
+    <!-- 4 -->
+    <div class="service-box">
+        <h3>Incident Detection & Response</h3>
+        <p>Prepare, detect, contain, and remediate breaches with rapid, structured incident response procedures that minimise damage and downtime.</p>
+      </div>
+      
+    
+    <!-- 5 -->
+    <div class="service-box">
+      <h3>Compliance Support</h3>
+      <p>GDPR, PCI-DSS, Cyber Essentials, ISO 27001, and more—get tailored guidance to meet mandatory requirements efficiently and effectively.</p>
+    </div>
+    
+    <!-- 6 -->
+    <div class="service-box">
+      <h3>Security Awareness & Training</h3>
+      <p>Empower teams with targeted training and workshops, fostering a culture of security throughout your organisation.</p>
+    </div>
+
+    <!-- 7: NEW -->
+    <div class="service-box">
+      <h3>Vulnerability & Threat Management</h3>
+      <p>Continuously scan, assess, and prioritize vulnerabilities. Leverage threat intelligence feeds to proactively remediate risks before they escalate.</p>
+    </div>
+
+    <!-- 8: NEW -->
+    <div class="service-box">
+      <h3>Zero Trust & Identity Management</h3>
+      <p>Implement modern, Zero Trust principles and robust IAM solutions—enforcing least privilege, MFA, and micro-segmentation to secure access.</p>
+    </div>
+
+  </div>
+</section>
+
+<!-- About Section -->
+<section class="about" id="about">
+  <img src="./footer.svg" alt="Security Consultant">
+  <div class="about-content">
+    <h2>About CIaaS</h2>
+    <p>
+      CIaaS is an independent consultancy led by Terry Sullivan, a CISSP-certified security specialist with over 20 years of experience.
+      We help organisations of all sizes identify and address security vulnerabilities while building holistic, sustainable security programs.
+      Working outside IR35, we partner with you flexibly, offering everything from short-term assessments to comprehensive, multi-year engagements.
+    </p>
+    <p>
+      Our mission is to provide transparent, effective, and actionable security strategies that align with your business objectives.
+    </p>
+  </div>
+</section>
+
+<!-- CTA / Contact Section -->
+<section class="cta" id="contact">
+  <h2>Ready to Strengthen Your Security?</h2>
+  <p>Let’s discuss how we can support your unique security requirements.</p>
+  <a href="mailto:info@ciaas.com?subject=Website enquiry">Contact Us Today</a>
+</section>
+
+<!-- Footer -->
+<footer>
+  <p>&copy; 2024 CIaaS Limited. All rights reserved.</p>
+  <p>Registered in the UK. Working outside IR35.</p>
+</footer>
+
 </body>
 </html>
