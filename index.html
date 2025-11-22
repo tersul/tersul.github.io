@@ -1,1371 +1,1663 @@
 <!DOCTYPE html>
 <html lang="en-GB">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <link rel="icon" type="image/x-icon" href="/favicon.ico">
-  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico">
-  <title>CIaaS® - Cyber Security & Identity Services</title>
-  <meta name="description" content="Cloud infrastructure and cyber security consultancy, plus workforce management and workplace collaboration for frontline workers." />
-  
-  <!-- Open Graph / Social Media Meta Tags -->
-  <meta property="og:type" content="website">
-  <meta property="og:title" content="CIaaS® - Cyber Security & Identity Services">
-  <meta property="og:description" content="UK cyber security consultancy specialising in Azure, M365, and StaffID™ workforce management platform">
-  <meta property="og:image" content="https://www.ciaas.com/og-image.jpg">
-  <meta property="og:url" content="https://www.ciaas.com">
-  <meta property="og:site_name" content="CIaaS Limited">
-  <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="CIaaS® - Cyber Security & Identity Services">
-  <meta name="twitter:description" content="UK cyber security consultancy specialising in Azure, M365, and StaffID™ workforce management">
-  <meta name="twitter:image" content="https://www.ciaas.com/og-image.jpg">
-  
-  <!-- Canonical URL -->
-  <link rel="canonical" href="https://www.ciaas.com">
-  
-  <!-- Font Awesome -->
-  <script src="https://kit.fontawesome.com/a91eef20c8.js" crossorigin="anonymous"></script>
-  
-  <!-- JSON-LD Structured Data -->
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "Organization",
-    "name": "CIaaS Limited",
-    "alternateName": "CIaaS",
-    "url": "https://www.ciaas.com",
-    "logo": "https://www.ciaas.com/logo.svg",
-    "description": "Independent cyber security and cloud infrastructure consultancy specialising in Azure and Microsoft 365, offering strategic security consulting and StaffID workforce management platform",
-    "address": {
-      "@type": "PostalAddress",
-      "addressCountry": "GB"
-    },
-    "contactPoint": {
-      "@type": "ContactPoint",
-      "email": "info@ciaas.com",
-      "contactType": "Customer Service",
-      "availableLanguage": "English"
-    },
-    "sameAs": [
-      "https://staffid.uk"
-    ],
-    "founder": {
-      "@type": "Person",
-      "name": "Terry Sullivan",
-      "jobTitle": "CISSP-Certified Security Specialist"
-    },
-    "numberOfEmployees": {
-      "@type": "QuantitativeValue",
-      "value": "1-10"
-    },
-    "foundingDate": "2023",
-    "areaServed": "GB",
-    "serviceType": [
-      "Cyber Security Consulting",
-      "Cloud Infrastructure",
-      "Workforce Management Software",
-      "Identity and Access Management"
-    ]
-  }
-  </script>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/x-icon" href="/favicon.ico" />
+    <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
+    <title>CIaaS® - Cyber Security & Identity Services</title>
+    <meta
+      name="description"
+      content="Cloud infrastructure and cyber security consultancy, plus workforce management and workplace collaboration for frontline workers."
+    />
 
-  <style>
-    /* Modern CSS Reset */
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
+    <!-- Open Graph / Social Media Meta Tags -->
+    <meta property="og:type" content="website" />
+    <meta
+      property="og:title"
+      content="CIaaS® - Cyber Security & Identity Services"
+    />
+    <meta
+      property="og:description"
+      content="UK cyber security consultancy specialising in Azure, M365, and StaffID™ workforce management solution"
+    />
+    <meta property="og:image" content="https://www.ciaas.com/og-image.jpg" />
+    <meta property="og:url" content="https://www.ciaas.com" />
+    <meta property="og:site_name" content="CIaaS Limited" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta
+      name="twitter:title"
+      content="CIaaS® - Cyber Security & Identity Services"
+    />
+    <meta
+      name="twitter:description"
+      content="UK cyber security consultancy specialising in Azure, M365, and StaffID™ workforce management"
+    />
+    <meta name="twitter:image" content="https://www.ciaas.com/og-image.jpg" />
 
-    :root {
-      --primary: #0F4C81;
-      --primary-dark: #0a3459;
-      --primary-light: #1a5a94;
-      --accent: #FFD700;
-      --accent-dark: #e6c200;
-      --text-dark: #1a1a1a;
-      --text-medium: #4a4a4a;
-      --text-light: #6a6a6a;
-      --bg-light: #f8f9fa;
-      --bg-white: #ffffff;
-      --border: #e0e0e0;
-      --shadow-sm: 0 2px 8px rgba(0,0,0,0.08);
-      --shadow-md: 0 4px 16px rgba(0,0,0,0.12);
-      --shadow-lg: 0 8px 32px rgba(0,0,0,0.16);
-      --radius: 12px;
-      --radius-sm: 8px;
-    }
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://www.ciaas.com" />
 
-    body {
-      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
-      color: var(--text-dark);
-      line-height: 1.6;
-      -webkit-font-smoothing: antialiased;
-      -moz-osx-font-smoothing: grayscale;
-    }
+    <!-- Font Awesome -->
+    <script
+      src="https://kit.fontawesome.com/a91eef20c8.js"
+      crossorigin="anonymous"
+    ></script>
 
-    /* Loading Animation */
-    #page-loader {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background: var(--bg-white);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      z-index: 9999;
-      transition: opacity 0.5s ease, visibility 0.5s ease;
-    }
-
-    #page-loader.hidden {
-      opacity: 0;
-      visibility: hidden;
-    }
-
-    .loader-content {
-      text-align: center;
-    }
-
-    .loader-spinner {
-      width: 50px;
-      height: 50px;
-      border: 4px solid var(--bg-light);
-      border-top: 4px solid var(--primary);
-      border-radius: 50%;
-      animation: spin 1s linear infinite;
-      margin: 0 auto 1rem;
-    }
-
-    @keyframes spin {
-      0% { transform: rotate(0deg); }
-      100% { transform: rotate(360deg); }
-    }
-
-    .loader-text {
-      color: var(--primary);
-      font-weight: 600;
-      font-size: 1.1rem;
-    }
-
-    /* Skip to main content link */
-    .skip-link {
-      position: absolute;
-      top: -100px;
-      left: 0;
-      background: var(--primary);
-      color: white;
-      padding: 0.75rem 1.5rem;
-      text-decoration: none;
-      z-index: 10000;
-      font-weight: 600;
-      border-radius: 0 0 var(--radius-sm) 0;
-      transition: top 0.3s ease;
-    }
-
-    .skip-link:focus {
-      top: 0;
-    }
-
-    /* Enhanced Focus Styles */
-    a:focus-visible,
-    button:focus-visible,
-    input:focus-visible,
-    textarea:focus-visible {
-      outline: 3px solid var(--accent);
-      outline-offset: 2px;
-      border-radius: 4px;
-    }
-
-    /* Typography */
-    h1, h2, h3, h4, h5, h6 {
-      font-weight: 700;
-      line-height: 1.2;
-      letter-spacing: -0.02em;
-    }
-
-    h1 {
-      font-size: clamp(2rem, 5vw, 3rem);
-    }
-
-    h2 {
-      font-size: clamp(1.75rem, 4vw, 2.5rem);
-    }
-
-    h3 {
-      font-size: clamp(1.25rem, 3vw, 1.5rem);
-    }
-
-    p {
-      color: var(--text-medium);
-      line-height: 1.7;
-    }
-
-    /* Navigation */
-    .navbar {
-      position: sticky;
-      top: 0;
-      z-index: 1000;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      padding: 1.25rem 5%;
-      background: var(--bg-white);
-      box-shadow: var(--shadow-sm);
-      transition: box-shadow 0.3s ease;
-    }
-
-    .navbar.scrolled {
-      box-shadow: var(--shadow-md);
-    }
-
-    .navbar .logo {
-      height: 40px;
-      width: auto;
-      transition: opacity 0.2s ease;
-    }
-
-    .navbar .logo:hover {
-      opacity: 0.85;
-    }
-
-    .nav-toggle {
-      display: none;
-      background: none;
-      border: none;
-      font-size: 1.5rem;
-      color: var(--primary);
-      cursor: pointer;
-      padding: 0.5rem;
-      z-index: 1001;
-      transition: color 0.2s ease;
-    }
-
-    .nav-toggle:hover {
-      color: var(--primary-light);
-    }
-
-    .nav-toggle[aria-expanded="true"] .fa-bars {
-      display: none;
-    }
-
-    .nav-toggle[aria-expanded="false"] .fa-xmark {
-      display: none;
-    }
-
-    .navbar ul {
-      list-style: none;
-      display: flex;
-      gap: 2rem;
-      align-items: center;
-    }
-
-    .navbar ul li a {
-      color: var(--text-dark);
-      text-decoration: none;
-      font-weight: 500;
-      font-size: 0.95rem;
-      transition: color 0.2s ease;
-      position: relative;
-    }
-
-    .navbar ul li a::after {
-      content: '';
-      position: absolute;
-      bottom: -4px;
-      left: 0;
-      width: 0;
-      height: 2px;
-      background: var(--primary);
-      transition: width 0.3s ease;
-    }
-
-    .navbar ul li a:hover {
-      color: var(--primary);
-    }
-
-    .navbar ul li a:hover::after {
-      width: 100%;
-    }
-
-    /* Hero Section */
-    .hero {
-      background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
-      min-height: 70vh;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      text-align: center;
-      color: var(--bg-white);
-      padding: 4rem 5%;
-      position: relative;
-      overflow: hidden;
-    }
-
-    .hero::before {
-      content: '';
-      position: absolute;
-      top: -10%;
-      left: -10%;
-      right: -10%;
-      bottom: -10%;
-      background: url('hero.webp') no-repeat center center/cover;
-      opacity: 0.1;
-      z-index: 0;
-      animation: heroMove 20s ease-in-out infinite;
-    }
-
-    @keyframes heroMove {
-      0%, 100% {
-        transform: translate(0, 0) scale(1.1);
+    <!-- JSON-LD Structured Data -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Organization",
+        "name": "CIaaS Limited",
+        "alternateName": "CIaaS",
+        "url": "https://www.ciaas.com",
+        "logo": "https://www.ciaas.com/logo.png",
+        "description": "Independent cyber security and cloud infrastructure consultancy specialising in Azure and Microsoft 365, offering strategic security consulting and StaffID workforce management solution",
+        "address": {
+          "@type": "PostalAddress",
+          "addressCountry": "GB"
+        },
+        "contactPoint": {
+          "@type": "ContactPoint",
+          "email": "info@ciaas.com",
+          "contactType": "Customer Service",
+          "availableLanguage": "English"
+        },
+        "sameAs": ["https://staffid.uk"],
+        "founder": {
+          "@type": "Person",
+          "name": "Terry Sullivan",
+          "jobTitle": "CISSP-Certified Security Specialist"
+        },
+        "numberOfEmployees": {
+          "@type": "QuantitativeValue",
+          "value": "1-10"
+        },
+        "foundingDate": "2023",
+        "areaServed": "GB",
+        "serviceType": [
+          "Cyber Security Consulting",
+          "Cloud Infrastructure",
+          "Workforce Management Software",
+          "Identity and Access Management"
+        ]
       }
-      25% {
-        transform: translate(2%, -2%) scale(1.12);
-      }
-      50% {
-        transform: translate(-2%, 2%) scale(1.1);
-      }
-      75% {
-        transform: translate(2%, 2%) scale(1.11);
-      }
-    }
-
-    .hero-content {
-      position: relative;
-      z-index: 1;
-      max-width: 800px;
-    }
-
-    .hero-content h1 {
-      margin-bottom: 1.5rem;
-      font-weight: 800;
-      text-shadow: 0 2px 4px rgba(0,0,0,0.1);
-    }
-
-    .hero-content p {
-      font-size: clamp(1.1rem, 2vw, 1.3rem);
-      margin-bottom: 2.5rem;
-      color: rgba(255,255,255,0.95);
-      line-height: 1.6;
-    }
-
-    .hero-content .cta-buttons {
-      display: flex;
-      gap: 1rem;
-      justify-content: center;
-      flex-wrap: wrap;
-    }
-
-    .btn {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      padding: 1rem 2rem;
-      text-decoration: none;
-      font-weight: 600;
-      font-size: 1rem;
-      border-radius: var(--radius-sm);
-      transition: all 0.3s ease;
-      cursor: pointer;
-      border: none;
-      white-space: nowrap;
-      position: relative;
-      overflow: hidden;
-      z-index: 1;
-    }
-
-    /* Enhanced Button Hover Effects */
-    .btn::before {
-      content: '';
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      width: 0;
-      height: 0;
-      border-radius: 50%;
-      background: rgba(255, 255, 255, 0.15);
-      transform: translate(-50%, -50%);
-      transition: width 0.6s ease, height 0.6s ease;
-      z-index: -1;
-    }
-
-    .btn:hover::before {
-      width: 300px;
-      height: 300px;
-    }
-
-    .btn-primary {
-      background: var(--accent);
-      color: var(--primary-dark);
-      box-shadow: 0 4px 16px rgba(255, 215, 0, 0.3);
-    }
-
-    .btn-primary::before {
-      background: rgba(255, 255, 255, 0.2);
-    }
-
-    .btn-primary:hover {
-      background: var(--accent-dark);
-      transform: translateY(-2px);
-      box-shadow: 0 6px 24px rgba(255, 215, 0, 0.4);
-    }
-
-    .btn-secondary {
-      background: rgba(255,255,255,0.15);
-      color: var(--bg-white);
-      backdrop-filter: blur(10px);
-      border: 2px solid rgba(255,255,255,0.3);
-    }
-
-    .btn-secondary:hover {
-      background: rgba(255,255,255,0.25);
-      border-color: rgba(255,255,255,0.5);
-    }
-
-    /* Featured Section */
-    .featured {
-      padding: 4rem 5%;
-      background: var(--bg-light);
-      text-align: center;
-    }
-
-    .featured-badge {
-      display: inline-block;
-      background: linear-gradient(135deg, var(--primary) 0%, var(--primary-light) 100%);
-      color: white;
-      padding: 0.5rem 1.25rem;
-      border-radius: 999px;
-      font-size: 0.9rem;
-      font-weight: 600;
-      margin-bottom: 1.5rem;
-      letter-spacing: 0.02em;
-    }
-
-    .featured h2 {
-      color: var(--primary);
-      margin-bottom: 1rem;
-    }
-
-    .featured p {
-      max-width: 700px;
-      margin: 0 auto 2.5rem;
-      font-size: 1.1rem;
-    }
-
-    .featured-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 2rem;
-      max-width: 1200px;
-      margin: 0 auto;
-    }
-
-    .featured-card {
-      background: var(--bg-white);
-      border-radius: var(--radius);
-      padding: 2rem;
-      box-shadow: var(--shadow-sm);
-      transition: all 0.3s ease;
-      border: 1px solid var(--border);
-    }
-
-    .featured-card:hover {
-      transform: translateY(-4px);
-      box-shadow: var(--shadow-lg);
-      border-color: var(--primary);
-    }
-
-    .featured-card .icon {
-      width: 60px;
-      height: 60px;
-      background: linear-gradient(135deg, var(--primary) 0%, var(--primary-light) 100%);
-      border-radius: var(--radius-sm);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      margin: 0 auto 1.5rem;
-      font-size: 1.75rem;
-      color: white;
-    }
-
-    .featured-card h3 {
-      color: var(--primary);
-      margin-bottom: 1rem;
-    }
-
-    .featured-card p {
-      font-size: 0.95rem;
-    }
-
-    /* Services Section */
-    .services {
-      padding: 5rem 5%;
-      background: var(--bg-white);
-    }
-
-    .section-header {
-      text-align: center;
-      max-width: 800px;
-      margin: 0 auto 4rem;
-    }
-
-    .section-header h2 {
-      color: var(--primary);
-      margin-bottom: 1rem;
-    }
-
-    .section-header p {
-      font-size: 1.1rem;
-    }
-
-    .services-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-      gap: 2rem;
-      max-width: 1400px;
-      margin: 0 auto;
-    }
-
-    .service-card {
-      background: var(--bg-white);
-      border-radius: var(--radius);
-      padding: 2rem;
-      box-shadow: var(--shadow-sm);
-      transition: all 0.3s ease;
-      border: 1px solid var(--border);
-      position: relative;
-      overflow: hidden;
-    }
-
-    .service-card .icon {
-      width: 50px;
-      height: 50px;
-      background: linear-gradient(135deg, var(--primary) 0%, var(--primary-light) 100%);
-      border-radius: var(--radius-sm);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      margin-bottom: 1.25rem;
-      font-size: 1.5rem;
-      color: white;
-    }
-
-    .service-card::before {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 4px;
-      height: 0;
-      background: linear-gradient(180deg, var(--primary) 0%, var(--primary-light) 100%);
-      transition: height 0.3s ease;
-    }
-
-    .service-card:hover {
-      transform: translateY(-4px);
-      box-shadow: var(--shadow-md);
-      border-color: var(--primary);
-    }
-
-    .service-card:hover::before {
-      height: 100%;
-    }
-
-    .service-card h3 {
-      color: var(--primary);
-      margin-bottom: 1rem;
-      font-size: 1.25rem;
-    }
-
-    .service-card p {
-      font-size: 0.95rem;
-      line-height: 1.7;
-    }
-
-    /* About Section */
-    .about {
-      padding: 5rem 5%;
-      background: var(--bg-light);
-    }
-
-    .about-container {
-      max-width: 1200px;
-      margin: 0 auto;
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 4rem;
-      align-items: center;
-    }
-
-    .about-image {
-      width: 100%;
-      border-radius: var(--radius);
-      box-shadow: var(--shadow-md);
-    }
-
-    .about-content h2 {
-      color: var(--primary);
-      margin-bottom: 1.5rem;
-    }
-
-    .about-content p {
-      margin-bottom: 1.5rem;
-      font-size: 1.05rem;
-    }
-
-    .credentials {
-      display: flex;
-      gap: 1.5rem;
-      flex-wrap: wrap;
-      margin-top: 2rem;
-    }
-
-    .credential-badge {
-      background: var(--bg-white);
-      padding: 0.75rem 1.25rem;
-      border-radius: var(--radius-sm);
-      font-weight: 600;
-      font-size: 0.9rem;
-      color: var(--primary);
-      box-shadow: var(--shadow-sm);
-      border: 2px solid var(--primary);
-    }
-
-    /* Contact Section */
-    .contact-section {
-      background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
-      padding: 5rem 5%;
-      color: var(--bg-white);
-      position: relative;
-      overflow: hidden;
-    }
-
-    .contact-section::before {
-      content: '';
-      position: absolute;
-      inset: 0;
-      background: url('footer.webp') no-repeat center / cover;
-      opacity: 0.05;
-      z-index: 0;
-      transform: scaleX(-1);
-      transform-origin: center center;
-      pointer-events: none;
-    }
-
-    .contact-container {
-      position: relative;
-      z-index: 1;
-      max-width: 900px;
-      margin: 0 auto;
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 4rem;
-      align-items: start;
-    }
-
-    .contact-info h2 {
-      color: var(--bg-white);
-      margin-bottom: 1rem;
-    }
-
-    .contact-info p {
-      color: rgba(255,255,255,0.9);
-      margin-bottom: 2rem;
-      font-size: 1.1rem;
-    }
-
-    .contact-details {
-      display: flex;
-      flex-direction: column;
-      gap: 1.5rem;
-    }
-
-    .contact-item {
-      display: flex;
-      align-items: start;
-      gap: 1rem;
-    }
-
-    .contact-item i {
-      font-size: 1.5rem;
-      color: var(--accent);
-      margin-top: 0.25rem;
-      min-width: 30px;
-    }
-
-    .contact-item div h3 {
-      color: var(--bg-white);
-      font-size: 1rem;
-      margin-bottom: 0.5rem;
-    }
-
-    .contact-item div p,
-    .contact-item div a {
-      color: rgba(255,255,255,0.85);
-      text-decoration: none;
-      transition: color 0.2s ease;
-    }
-
-    .contact-item div a:hover {
-      color: var(--accent);
-    }
-
-    .contact-form-wrapper {
-      background: rgba(255,255,255,0.1);
-      backdrop-filter: blur(10px);
-      border: 1px solid rgba(255,255,255,0.2);
-      border-radius: var(--radius);
-      padding: 2rem;
-    }
-
-    .contact-form-wrapper h3 {
-      color: var(--bg-white);
-      margin-bottom: 1.5rem;
-      font-size: 1.5rem;
-    }
-
-    .contact-form {
-      display: flex;
-      flex-direction: column;
-      gap: 1.25rem;
-    }
-
-    .form-group {
-      display: flex;
-      flex-direction: column;
-      gap: 0.5rem;
-    }
-
-    .form-group label {
-      color: var(--bg-white);
-      font-weight: 500;
-      font-size: 0.95rem;
-    }
-
-    .form-group input,
-    .form-group textarea {
-      padding: 0.875rem 1rem;
-      border: 1px solid rgba(255,255,255,0.3);
-      border-radius: var(--radius-sm);
-      background: rgba(255,255,255,0.95);
-      color: var(--text-dark);
-      font-size: 1rem;
-      font-family: inherit;
-      transition: all 0.2s ease;
-    }
-
-    .form-group input::placeholder,
-    .form-group textarea::placeholder {
-      color: var(--text-light);
-    }
-
-    .form-group input:focus,
-    .form-group textarea:focus {
-      background: var(--bg-white);
-      border-color: var(--accent);
-      outline: none;
-    }
-
-    .form-group textarea {
-      min-height: 120px;
-      resize: vertical;
-    }
-
-    .form-submit {
-      margin-top: 0.5rem;
-    }
-
-    .form-submit .btn {
-      width: 100%;
-    }
-
-    .form-note {
-      font-size: 0.85rem;
-      color: rgba(255,255,255,0.7);
-      margin-top: 0.5rem;
-      text-align: center;
-    }
-
-    /* Footer */
-    footer {
-      padding: 3rem 5% 2rem;
-      background: var(--text-dark);
-      color: rgba(255,255,255,0.7);
-    }
-
-    .footer-content {
-      max-width: 1400px;
-      margin: 0 auto;
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 3rem;
-      margin-bottom: 2rem;
-    }
-
-    .footer-section h4 {
-      color: var(--bg-white);
-      margin-bottom: 1rem;
-      font-size: 1.1rem;
-    }
-
-    .footer-section p,
-    .footer-section a {
-      color: rgba(255,255,255,0.7);
-      text-decoration: none;
-      display: block;
-      margin-bottom: 0.5rem;
-      transition: color 0.2s ease;
-    }
-
-    .footer-section a:hover {
-      color: var(--accent);
-    }
-
-    .footer-bottom {
-      max-width: 1400px;
-      margin: 2rem auto 0;
-      padding-top: 2rem;
-      border-top: 1px solid rgba(255,255,255,0.1);
-      text-align: center;
-      font-size: 0.9rem;
-    }
-
-    /* Responsive Design */
-    @media screen and (max-width: 968px) {
-      .contact-container,
-      .about-container {
-        grid-template-columns: 1fr;
-        gap: 3rem;
+    </script>
+
+    <style>
+      /* Modern CSS Reset */
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
       }
 
-      .services-grid,
-      .featured-grid {
-        grid-template-columns: 1fr;
+      :root {
+        --primary: #0f4c81;
+        --primary-dark: #0a3459;
+        --primary-light: #1a5a94;
+        --accent: #ffd700;
+        --accent-dark: #e6c200;
+        --text-dark: #1a1a1a;
+        --text-medium: #4a4a4a;
+        --text-light: #6a6a6a;
+        --bg-light: #f8f9fa;
+        --bg-white: #ffffff;
+        --border: #e0e0e0;
+        --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.08);
+        --shadow-md: 0 4px 16px rgba(0, 0, 0, 0.12);
+        --shadow-lg: 0 8px 32px rgba(0, 0, 0, 0.16);
+        --radius: 12px;
+        --radius-sm: 8px;
       }
 
-      .footer-content {
-        grid-template-columns: 1fr;
-        gap: 2rem;
-      }
-    }
-
-    @media screen and (max-width: 768px) {
-      .nav-toggle {
-        display: block;
+      body {
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+          "Helvetica Neue", Arial, sans-serif;
+        color: var(--text-dark);
+        line-height: 1.6;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
       }
 
-      .navbar ul {
+      /* Loading Animation */
+      #page-loader {
         position: fixed;
-        right: -100%;
         top: 0;
-        height: 100vh;
-        width: 280px;
-        max-width: 80vw;
-        flex-direction: column;
-        background: var(--bg-white);
-        box-shadow: var(--shadow-lg);
-        padding: 6rem 2rem 2rem;
-        transition: right 0.3s ease;
-        align-items: flex-start;
-        gap: 1.5rem;
-      }
-
-      .navbar ul.active {
-        right: 0;
-      }
-
-      .navbar ul li {
+        left: 0;
         width: 100%;
+        height: 100%;
+        background: var(--bg-white);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        z-index: 9999;
+        transition: opacity 0.5s ease, visibility 0.5s ease;
       }
 
-      .navbar ul li a {
-        display: block;
-        padding: 0.75rem 0;
+      #page-loader.hidden {
+        opacity: 0;
+        visibility: hidden;
+      }
+
+      .loader-content {
+        text-align: center;
+      }
+
+      .loader-spinner {
+        width: 50px;
+        height: 50px;
+        border: 4px solid var(--bg-light);
+        border-top: 4px solid var(--primary);
+        border-radius: 50%;
+        animation: spin 1s linear infinite;
+        margin: 0 auto 1rem;
+      }
+
+      @keyframes spin {
+        0% {
+          transform: rotate(0deg);
+        }
+        100% {
+          transform: rotate(360deg);
+        }
+      }
+
+      .loader-text {
+        color: var(--primary);
+        font-weight: 600;
         font-size: 1.1rem;
       }
 
-      .hero {
-        min-height: 60vh;
-        padding: 3rem 5%;
+      /* Skip to main content link */
+      .skip-link {
+        position: absolute;
+        top: -100px;
+        left: 0;
+        background: var(--primary);
+        color: white;
+        padding: 0.75rem 1.5rem;
+        text-decoration: none;
+        z-index: 10000;
+        font-weight: 600;
+        border-radius: 0 0 var(--radius-sm) 0;
+        transition: top 0.3s ease;
       }
-    }
 
-    @media screen and (max-width: 640px) {
+      .skip-link:focus {
+        top: 0;
+      }
+
+      /* Enhanced Focus Styles */
+      a:focus-visible,
+      button:focus-visible,
+      input:focus-visible,
+      textarea:focus-visible {
+        outline: 3px solid var(--accent);
+        outline-offset: 2px;
+        border-radius: 4px;
+      }
+
+      /* Typography */
+      h1,
+      h2,
+      h3,
+      h4,
+      h5,
+      h6 {
+        font-weight: 700;
+        line-height: 1.2;
+        letter-spacing: -0.02em;
+      }
+
+      h1 {
+        font-size: clamp(2rem, 5vw, 3rem);
+      }
+
+      h2 {
+        font-size: clamp(1.75rem, 4vw, 2.5rem);
+      }
+
+      h3 {
+        font-size: clamp(1.25rem, 3vw, 1.5rem);
+      }
+
+      p {
+        color: var(--text-medium);
+        line-height: 1.7;
+      }
+
+      /* Navigation */
       .navbar {
-        padding: 1rem 4%;
+        position: sticky;
+        top: 0;
+        z-index: 1000;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 1.25rem 5%;
+        background: var(--bg-white);
+        box-shadow: var(--shadow-sm);
+        transition: box-shadow 0.3s ease;
       }
 
-      .hero-content .cta-buttons {
-        flex-direction: column;
+      .navbar.scrolled {
+        box-shadow: var(--shadow-md);
       }
 
-      .btn {
+      .navbar .logo {
+        height: 40px;
+        width: auto;
+        transition: opacity 0.2s ease;
+      }
+
+      .navbar .logo:hover {
+        opacity: 0.85;
+      }
+
+      .nav-toggle {
+        display: none;
+        background: none;
+        border: none;
+        font-size: 1.5rem;
+        color: var(--primary);
+        cursor: pointer;
+        padding: 0.5rem;
+        z-index: 1001;
+        transition: color 0.2s ease;
+      }
+
+      .nav-toggle:hover {
+        color: var(--primary-light);
+      }
+
+      .nav-toggle[aria-expanded="true"] .fa-bars {
+        display: none;
+      }
+
+      .nav-toggle[aria-expanded="false"] .fa-xmark {
+        display: none;
+      }
+
+      .navbar ul {
+        list-style: none;
+        display: flex;
+        gap: 2rem;
+        align-items: center;
+      }
+
+      .navbar ul li a {
+        color: var(--text-dark);
+        text-decoration: none;
+        font-weight: 500;
+        font-size: 0.95rem;
+        transition: color 0.2s ease;
+        position: relative;
+      }
+
+      .navbar ul li a::after {
+        content: "";
+        position: absolute;
+        bottom: -4px;
+        left: 0;
+        width: 0;
+        height: 2px;
+        background: var(--primary);
+        transition: width 0.3s ease;
+      }
+
+      .navbar ul li a:hover {
+        color: var(--primary);
+      }
+
+      .navbar ul li a:hover::after {
         width: 100%;
       }
 
+      /* Hero Section */
+      .hero {
+        background: linear-gradient(
+          135deg,
+          var(--primary) 0%,
+          var(--primary-dark) 100%
+        );
+        min-height: 70vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        color: var(--bg-white);
+        padding: 4rem 5%;
+        position: relative;
+        overflow: hidden;
+      }
+
+      .hero::before {
+        content: "";
+        position: absolute;
+        top: -10%;
+        left: -10%;
+        right: -10%;
+        bottom: -10%;
+        background: url("hero.webp") no-repeat center center/cover;
+        opacity: 0.1;
+        z-index: 0;
+        animation: heroMove 20s ease-in-out infinite;
+      }
+
+      @keyframes heroMove {
+        0%,
+        100% {
+          transform: translate(0, 0) scale(1.1);
+        }
+        25% {
+          transform: translate(2%, -2%) scale(1.12);
+        }
+        50% {
+          transform: translate(-2%, 2%) scale(1.1);
+        }
+        75% {
+          transform: translate(2%, 2%) scale(1.11);
+        }
+      }
+
+      .hero-content {
+        position: relative;
+        z-index: 1;
+        max-width: 800px;
+      }
+
+      .hero-content h1 {
+        margin-bottom: 1.5rem;
+        font-weight: 800;
+        text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+      }
+
+      .hero-content p {
+        font-size: clamp(1.1rem, 2vw, 1.3rem);
+        margin-bottom: 2.5rem;
+        color: rgba(255, 255, 255, 0.95);
+        line-height: 1.6;
+      }
+
+      .hero-content .cta-buttons {
+        display: flex;
+        gap: 1rem;
+        justify-content: center;
+        flex-wrap: wrap;
+      }
+
+      .btn {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        padding: 1rem 2rem;
+        text-decoration: none;
+        font-weight: 600;
+        font-size: 1rem;
+        border-radius: var(--radius-sm);
+        transition: all 0.3s ease;
+        cursor: pointer;
+        border: none;
+        white-space: nowrap;
+        position: relative;
+        overflow: hidden;
+        z-index: 1;
+      }
+
+      /* Enhanced Button Hover Effects */
+      .btn::before {
+        content: "";
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        width: 0;
+        height: 0;
+        border-radius: 50%;
+        background: rgba(255, 255, 255, 0.15);
+        transform: translate(-50%, -50%);
+        transition: width 0.6s ease, height 0.6s ease;
+        z-index: -1;
+      }
+
+      .btn:hover::before {
+        width: 300px;
+        height: 300px;
+      }
+
+      .btn-primary {
+        background: var(--accent);
+        color: var(--primary-dark);
+        box-shadow: 0 4px 16px rgba(255, 215, 0, 0.3);
+      }
+
+      .btn-primary::before {
+        background: rgba(255, 255, 255, 0.2);
+      }
+
+      .btn-primary:hover {
+        background: var(--accent-dark);
+        transform: translateY(-2px);
+        box-shadow: 0 6px 24px rgba(255, 215, 0, 0.4);
+      }
+
+      .btn-secondary {
+        background: rgba(255, 255, 255, 0.15);
+        color: var(--bg-white);
+        backdrop-filter: blur(10px);
+        border: 2px solid rgba(255, 255, 255, 0.3);
+      }
+
+      .btn-secondary:hover {
+        background: rgba(255, 255, 255, 0.25);
+        border-color: rgba(255, 255, 255, 0.5);
+      }
+
+      /* Featured Section */
+      .featured {
+        padding: 4rem 5%;
+        background: var(--bg-light);
+        text-align: center;
+      }
+
+      .featured-badge {
+        display: inline-block;
+        background: linear-gradient(
+          135deg,
+          var(--primary) 0%,
+          var(--primary-light) 100%
+        );
+        color: white;
+        padding: 0.5rem 1.25rem;
+        border-radius: 999px;
+        font-size: 0.9rem;
+        font-weight: 600;
+        margin-bottom: 1.5rem;
+        letter-spacing: 0.02em;
+      }
+
+      .featured h2 {
+        color: var(--primary);
+        margin-bottom: 1rem;
+      }
+
+      .featured p {
+        max-width: 700px;
+        margin: 0 auto 2.5rem;
+        font-size: 1.1rem;
+      }
+
+      .featured-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        gap: 2rem;
+        max-width: 1200px;
+        margin: 0 auto;
+      }
+
+      .featured-card {
+        background: var(--bg-white);
+        border-radius: var(--radius);
+        padding: 2rem;
+        box-shadow: var(--shadow-sm);
+        transition: all 0.3s ease;
+        border: 1px solid var(--border);
+      }
+
+      .featured-card:hover {
+        transform: translateY(-4px);
+        box-shadow: var(--shadow-lg);
+        border-color: var(--primary);
+      }
+
+      .featured-card .icon {
+        width: 60px;
+        height: 60px;
+        background: linear-gradient(
+          135deg,
+          var(--primary) 0%,
+          var(--primary-light) 100%
+        );
+        border-radius: var(--radius-sm);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: 0 auto 1.5rem;
+        font-size: 1.75rem;
+        color: white;
+      }
+
+      .featured-card h3 {
+        color: var(--primary);
+        margin-bottom: 1rem;
+      }
+
+      .featured-card p {
+        font-size: 0.95rem;
+      }
+
+      /* Services Section */
+      .services {
+        padding: 5rem 5%;
+        background: var(--bg-white);
+      }
+
+      .section-header {
+        text-align: center;
+        max-width: 800px;
+        margin: 0 auto 4rem;
+      }
+
+      .section-header h2 {
+        color: var(--primary);
+        margin-bottom: 1rem;
+      }
+
+      .section-header p {
+        font-size: 1.1rem;
+      }
+
+      .services-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 2rem;
+        max-width: 1400px;
+        margin: 0 auto;
+      }
+
+      .service-card {
+        background: var(--bg-white);
+        border-radius: var(--radius);
+        padding: 2rem;
+        box-shadow: var(--shadow-sm);
+        transition: all 0.3s ease;
+        border: 1px solid var(--border);
+        position: relative;
+        overflow: hidden;
+      }
+
+      .service-card .icon {
+        width: 50px;
+        height: 50px;
+        background: linear-gradient(
+          135deg,
+          var(--primary) 0%,
+          var(--primary-light) 100%
+        );
+        border-radius: var(--radius-sm);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-bottom: 1.25rem;
+        font-size: 1.5rem;
+        color: white;
+      }
+
+      .service-card::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 4px;
+        height: 0;
+        background: linear-gradient(
+          180deg,
+          var(--primary) 0%,
+          var(--primary-light) 100%
+        );
+        transition: height 0.3s ease;
+      }
+
+      .service-card:hover {
+        transform: translateY(-4px);
+        box-shadow: var(--shadow-md);
+        border-color: var(--primary);
+      }
+
+      .service-card:hover::before {
+        height: 100%;
+      }
+
+      .service-card h3 {
+        color: var(--primary);
+        margin-bottom: 1rem;
+        font-size: 1.25rem;
+      }
+
+      .service-card p {
+        font-size: 0.95rem;
+        line-height: 1.7;
+      }
+
+      /* About Section */
+      .about {
+        padding: 5rem 5%;
+        background: var(--bg-light);
+      }
+
+      .about-container {
+        max-width: 1200px;
+        margin: 0 auto;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 4rem;
+        align-items: center;
+      }
+
+      .about-image {
+        width: 100%;
+        border-radius: var(--radius);
+        box-shadow: var(--shadow-md);
+      }
+
+      .about-content h2 {
+        color: var(--primary);
+        margin-bottom: 1.5rem;
+      }
+
+      .about-content p {
+        margin-bottom: 1.5rem;
+        font-size: 1.05rem;
+      }
+
       .credentials {
-        flex-direction: column;
+        display: flex;
+        gap: 1.5rem;
+        flex-wrap: wrap;
+        margin-top: 2rem;
       }
 
       .credential-badge {
+        background: var(--bg-white);
+        padding: 0.75rem 1.25rem;
+        border-radius: var(--radius-sm);
+        font-weight: 600;
+        font-size: 0.9rem;
+        color: var(--primary);
+        box-shadow: var(--shadow-sm);
+        border: 2px solid var(--primary);
+      }
+
+      /* Contact Section */
+      .contact-section {
+        background: linear-gradient(
+          135deg,
+          var(--primary) 0%,
+          var(--primary-dark) 100%
+        );
+        padding: 5rem 5%;
+        color: var(--bg-white);
+        position: relative;
+        overflow: hidden;
+      }
+
+      .contact-section::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background: url("footer.webp") no-repeat center / cover;
+        opacity: 0.05;
+        z-index: 0;
+        transform: scaleX(-1);
+        transform-origin: center center;
+        pointer-events: none;
+      }
+
+      .contact-container {
+        position: relative;
+        z-index: 1;
+        max-width: 900px;
+        margin: 0 auto;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 4rem;
+        align-items: start;
+      }
+
+      .contact-info h2 {
+        color: var(--bg-white);
+        margin-bottom: 1rem;
+      }
+
+      .contact-info p {
+        color: rgba(255, 255, 255, 0.9);
+        margin-bottom: 2rem;
+        font-size: 1.1rem;
+      }
+
+      .contact-details {
+        display: flex;
+        flex-direction: column;
+        gap: 1.5rem;
+      }
+
+      .contact-item {
+        display: flex;
+        align-items: start;
+        gap: 1rem;
+      }
+
+      .contact-item i {
+        font-size: 1.5rem;
+        color: var(--accent);
+        margin-top: 0.25rem;
+        min-width: 30px;
+      }
+
+      .contact-item div h3 {
+        color: var(--bg-white);
+        font-size: 1rem;
+        margin-bottom: 0.5rem;
+      }
+
+      .contact-item div p,
+      .contact-item div a {
+        color: rgba(255, 255, 255, 0.85);
+        text-decoration: none;
+        transition: color 0.2s ease;
+      }
+
+      .contact-item div a:hover {
+        color: var(--accent);
+      }
+
+      .contact-form-wrapper {
+        background: rgba(255, 255, 255, 0.1);
+        backdrop-filter: blur(10px);
+        border: 1px solid rgba(255, 255, 255, 0.2);
+        border-radius: var(--radius);
+        padding: 2rem;
+      }
+
+      .contact-form-wrapper h3 {
+        color: var(--bg-white);
+        margin-bottom: 1.5rem;
+        font-size: 1.5rem;
+      }
+
+      .contact-form {
+        display: flex;
+        flex-direction: column;
+        gap: 1.25rem;
+      }
+
+      .form-group {
+        display: flex;
+        flex-direction: column;
+        gap: 0.5rem;
+      }
+
+      .form-group label {
+        color: var(--bg-white);
+        font-weight: 500;
+        font-size: 0.95rem;
+      }
+
+      .form-group input,
+      .form-group textarea {
+        padding: 0.875rem 1rem;
+        border: 1px solid rgba(255, 255, 255, 0.3);
+        border-radius: var(--radius-sm);
+        background: rgba(255, 255, 255, 0.95);
+        color: var(--text-dark);
+        font-size: 1rem;
+        font-family: inherit;
+        transition: all 0.2s ease;
+      }
+
+      .form-group input::placeholder,
+      .form-group textarea::placeholder {
+        color: var(--text-light);
+      }
+
+      .form-group input:focus,
+      .form-group textarea:focus {
+        background: var(--bg-white);
+        border-color: var(--accent);
+        outline: none;
+      }
+
+      .form-group textarea {
+        min-height: 120px;
+        resize: vertical;
+      }
+
+      .form-submit {
+        margin-top: 0.5rem;
+      }
+
+      .form-submit .btn {
+        width: 100%;
+      }
+
+      .form-note {
+        font-size: 0.85rem;
+        color: rgba(255, 255, 255, 0.7);
+        margin-top: 0.5rem;
         text-align: center;
       }
-    }
 
-    /* Smooth Scroll */
-    html {
-      scroll-behavior: smooth;
-    }
-
-    /* Accessibility: Respect reduced motion preference */
-    @media (prefers-reduced-motion: reduce) {
-      .hero::before {
-        animation: none;
+      /* Footer */
+      footer {
+        padding: 3rem 5% 2rem;
+        background: var(--text-dark);
+        color: rgba(255, 255, 255, 0.7);
       }
+
+      .footer-content {
+        max-width: 1400px;
+        margin: 0 auto;
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 3rem;
+        margin-bottom: 2rem;
+      }
+
+      .footer-section h4 {
+        color: var(--bg-white);
+        margin-bottom: 1rem;
+        font-size: 1.1rem;
+      }
+
+      .footer-section p,
+      .footer-section a {
+        color: rgba(255, 255, 255, 0.7);
+        text-decoration: none;
+        display: block;
+        margin-bottom: 0.5rem;
+        transition: color 0.2s ease;
+      }
+
+      .footer-section a:hover {
+        color: var(--accent);
+      }
+
+      .footer-bottom {
+        max-width: 1400px;
+        margin: 2rem auto 0;
+        padding-top: 2rem;
+        border-top: 1px solid rgba(255, 255, 255, 0.1);
+        text-align: center;
+        font-size: 0.9rem;
+      }
+
+      /* Responsive Design */
+      @media screen and (max-width: 968px) {
+        .contact-container,
+        .about-container {
+          grid-template-columns: 1fr;
+          gap: 3rem;
+        }
+
+        .services-grid,
+        .featured-grid {
+          grid-template-columns: 1fr;
+        }
+
+        .footer-content {
+          grid-template-columns: 1fr;
+          gap: 2rem;
+        }
+      }
+
+      @media screen and (max-width: 768px) {
+        .nav-toggle {
+          display: block;
+        }
+
+        .navbar ul {
+          position: fixed;
+          right: -100%;
+          top: 0;
+          height: 100vh;
+          width: 280px;
+          max-width: 80vw;
+          flex-direction: column;
+          background: var(--bg-white);
+          box-shadow: var(--shadow-lg);
+          padding: 6rem 2rem 2rem;
+          transition: right 0.3s ease;
+          align-items: flex-start;
+          gap: 1.5rem;
+        }
+
+        .navbar ul.active {
+          right: 0;
+        }
+
+        .navbar ul li {
+          width: 100%;
+        }
+
+        .navbar ul li a {
+          display: block;
+          padding: 0.75rem 0;
+          font-size: 1.1rem;
+        }
+
+        .hero {
+          min-height: 60vh;
+          padding: 3rem 5%;
+        }
+      }
+
+      @media screen and (max-width: 640px) {
+        .navbar {
+          padding: 1rem 4%;
+        }
+
+        .hero-content .cta-buttons {
+          flex-direction: column;
+        }
+
+        .btn {
+          width: 100%;
+        }
+
+        .credentials {
+          flex-direction: column;
+        }
+
+        .credential-badge {
+          text-align: center;
+        }
+      }
+
+      /* Smooth Scroll */
+      html {
+        scroll-behavior: smooth;
+      }
+
+      /* Accessibility: Respect reduced motion preference */
+      @media (prefers-reduced-motion: reduce) {
+        .hero::before {
+          animation: none;
+        }
+        .featured-card,
+        .service-card {
+          opacity: 1 !important;
+          transform: none !important;
+          transition: none !important;
+        }
+        * {
+          animation-duration: 0.01ms !important;
+          animation-iteration-count: 1 !important;
+          transition-duration: 0.01ms !important;
+        }
+        #page-loader {
+          display: none;
+        }
+      }
+
+      /* Card Animation on Scroll */
       .featured-card,
       .service-card {
-        opacity: 1 !important;
-        transform: none !important;
-        transition: none !important;
+        opacity: 0;
+        transform: translateY(30px);
+        transition: opacity 0.6s ease, transform 0.6s ease;
       }
-      * {
-        animation-duration: 0.01ms !important;
-        animation-iteration-count: 1 !important;
-        transition-duration: 0.01ms !important;
+
+      .featured-card.animate-in,
+      .service-card.animate-in {
+        opacity: 1;
+        transform: translateY(0);
       }
-      #page-loader {
-        display: none;
+
+      /* Staggered animation delays */
+      .featured-card:nth-child(1) {
+        transition-delay: 0.1s;
       }
-    }
+      .featured-card:nth-child(2) {
+        transition-delay: 0.2s;
+      }
+      .featured-card:nth-child(3) {
+        transition-delay: 0.3s;
+      }
+      .featured-card:nth-child(4) {
+        transition-delay: 0.4s;
+      }
+      .featured-card:nth-child(5) {
+        transition-delay: 0.5s;
+      }
+      .featured-card:nth-child(6) {
+        transition-delay: 0.6s;
+      }
 
-    /* Card Animation on Scroll */
-    .featured-card,
-    .service-card {
-      opacity: 0;
-      transform: translateY(30px);
-      transition: opacity 0.6s ease, transform 0.6s ease;
-    }
+      .service-card:nth-child(1) {
+        transition-delay: 0.1s;
+      }
+      .service-card:nth-child(2) {
+        transition-delay: 0.2s;
+      }
+      .service-card:nth-child(3) {
+        transition-delay: 0.3s;
+      }
+      .service-card:nth-child(4) {
+        transition-delay: 0.4s;
+      }
+      .service-card:nth-child(5) {
+        transition-delay: 0.5s;
+      }
+      .service-card:nth-child(6) {
+        transition-delay: 0.6s;
+      }
+      .service-card:nth-child(7) {
+        transition-delay: 0.7s;
+      }
+      .service-card:nth-child(8) {
+        transition-delay: 0.8s;
+      }
 
-    .featured-card.animate-in,
-    .service-card.animate-in {
-      opacity: 1;
-      transform: translateY(0);
-    }
+      /* Utilities */
+      .text-center {
+        text-align: center;
+      }
 
-    /* Staggered animation delays */
-    .featured-card:nth-child(1) { transition-delay: 0.1s; }
-    .featured-card:nth-child(2) { transition-delay: 0.2s; }
-    .featured-card:nth-child(3) { transition-delay: 0.3s; }
-    .featured-card:nth-child(4) { transition-delay: 0.4s; }
-    .featured-card:nth-child(5) { transition-delay: 0.5s; }
-    .featured-card:nth-child(6) { transition-delay: 0.6s; }
-
-    .service-card:nth-child(1) { transition-delay: 0.1s; }
-    .service-card:nth-child(2) { transition-delay: 0.2s; }
-    .service-card:nth-child(3) { transition-delay: 0.3s; }
-    .service-card:nth-child(4) { transition-delay: 0.4s; }
-    .service-card:nth-child(5) { transition-delay: 0.5s; }
-    .service-card:nth-child(6) { transition-delay: 0.6s; }
-    .service-card:nth-child(7) { transition-delay: 0.7s; }
-    .service-card:nth-child(8) { transition-delay: 0.8s; }
-
-    /* Utilities */
-    .text-center {
-      text-align: center;
-    }
-
-    .mb-1 { margin-bottom: 1rem; }
-    .mb-2 { margin-bottom: 2rem; }
-    .mt-2 { margin-top: 2rem; }
-  </style>
-</head>
-<body>
-
-<!-- Page Loader -->
-<div id="page-loader" aria-hidden="true">
-  <div class="loader-content">
-    <div class="loader-spinner"></div>
-    <div class="loader-text">Loading CIaaS</div>
-  </div>
-</div>
-
-<!-- Skip to main content -->
-<a href="#main" class="skip-link">Skip to main content</a>
-
-<!-- Navigation -->
-<nav class="navbar" id="navbar" role="navigation" aria-label="Main navigation">
-  <a href="#home" class="logo" aria-label="CIaaS Home">
-    <img src="logo.svg" alt="CIaaS Logo" style="height: 40px; width: auto;" />
-  </a>
-  <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="navMenu">
-    <i class="fa-solid fa-bars" aria-hidden="true"></i>
-    <i class="fa-solid fa-xmark" aria-hidden="true"></i>
-  </button>
-  <ul id="navMenu" role="menubar">
-    <li role="none"><a href="#services" role="menuitem">Services</a></li>
-    <li role="none"><a href="#staffid" role="menuitem">StaffID™</a></li>
-    <li role="none"><a href="#about" role="menuitem">About</a></li>
-    <li role="none"><a href="#contact" role="menuitem">Contact</a></li>
-  </ul>
-</nav>
-
-<!-- Hero Section -->
-<main id="main">
-  <section class="hero" id="home">
-    <div class="hero-content">
-      <h1>Compliant Infrastructure as a Service</h1>
-      <p>CIaaS is a UK-based cyber security and cloud infrastructure consultancy, specialising in Azure and Microsoft 365.</p>
-      <p>We also provide <strong>StaffID™</strong>, a secure workforce management and collaboration platform for frontline and shift-based workers. Track time, manage tasks and communicate with teams from employees' personal devices, even if you do not have in-house IT.</p>
-      <div class="cta-buttons">
-        <a href="#services" class="btn btn-primary">Explore Services</a>
-        <a href="#staffid" class="btn btn-secondary">Learn About StaffID</a>
+      .mb-1 {
+        margin-bottom: 1rem;
+      }
+      .mb-2 {
+        margin-bottom: 2rem;
+      }
+      .mt-2 {
+        margin-top: 2rem;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Page Loader -->
+    <div id="page-loader" aria-hidden="true">
+      <div class="loader-content">
+        <div class="loader-spinner"></div>
+        <div class="loader-text">Loading CIaaS</div>
       </div>
     </div>
-  </section>
 
-  <!-- Featured StaffID Section -->
-  <section class="featured" id="staffid">
-    <span class="featured-badge" role="text"><span aria-hidden="true">✨</span> New Service</span>
-    <h2>Introducing StaffID™</h2>
-    <p><strong>StaffID™</strong> is a secure workforce management and collaboration platform designed for frontline and shift-based workers. It combines secure sign-in, push notifications, shift scheduling, clock-in and clock-out, task management, timesheets and more, without needing an in-house IT team.</p>
-    
-    <div class="featured-grid">
-      <article class="featured-card">
-        <div class="icon" aria-hidden="true"><i class="fa-solid fa-shield-halved"></i></div>
-        <h3>Secure Authentication</h3>
-        <p>Simple, memorable sign-in for workers with low IT literacy who are accessing workplace apps on any device, backed by strong identity protection.</p>
-      </article>
-      
-      <article class="featured-card">
-        <div class="icon" aria-hidden="true"><i class="fa-solid fa-mobile-screen-button"></i></div>
-        <h3>BYOD Ready</h3>
-        <p>Protection policies keep work data secure inside the apps that staff use on their own devices.</p>
-      </article>
-      
-      <article class="featured-card">
-        <div class="icon" aria-hidden="true"><i class="fa-solid fa-clock"></i></div>
-        <h3>Time &amp; Attendance</h3>
-        <p>Built-in clock-in and clock-out, shift scheduling and automated timesheet generation for accurate, efficient payroll.</p>
-      </article>
-      
-      <article class="featured-card">
-        <div class="icon" aria-hidden="true"><i class="fa-solid fa-list-check"></i></div>
-        <h3>Task Management</h3>
-        <p>Assign one-off and recurring tasks to individuals or teams, with clear status tracking and completion notifications.</p>
-      </article>
-      
-      <article class="featured-card">
-        <div class="icon" aria-hidden="true"><i class="fa-solid fa-comments"></i></div>
-        <h3>Team Communication</h3>
-        <p>Real-time messaging, team channels and instant push notifications to workers' personal mobile devices.</p>
-      </article>
-      
-      <article class="featured-card">
-        <div class="icon" aria-hidden="true"><i class="fa-solid fa-bolt"></i></div>
-        <h3>Rapid Deployment</h3>
-        <p>Get your frontline workers connected and productive quickly with a streamlined onboarding process that keeps IT overhead low.</p>
-      </article>
-    </div>
+    <!-- Skip to main content -->
+    <a href="#main" class="skip-link">Skip to main content</a>
 
-    <div style="margin-top: 2.5rem;">
-      <a href="https://staffid.uk" class="btn btn-primary" target="_blank" rel="noopener noreferrer">Visit StaffID Setup Guide →</a>
-    </div>
-  </section>
+    <!-- Navigation -->
+    <nav
+      class="navbar"
+      id="navbar"
+      role="navigation"
+      aria-label="Main navigation"
+    >
+      <a href="#home" class="logo" aria-label="CIaaS Home">
+        <img
+          src="logo.png"
+          alt="CIaaS Logo"
+          style="height: 40px; width: auto"
+        />
+      </a>
+      <button
+        class="nav-toggle"
+        id="navToggle"
+        aria-label="Toggle navigation menu"
+        aria-expanded="false"
+        aria-controls="navMenu"
+      >
+        <i class="fa-solid fa-bars" aria-hidden="true"></i>
+        <i class="fa-solid fa-xmark" aria-hidden="true"></i>
+      </button>
+      <ul id="navMenu" role="menubar">
+        <li role="none"><a href="#services" role="menuitem">Services</a></li>
+        <li role="none"><a href="#staffid" role="menuitem">StaffID™</a></li>
+        <li role="none"><a href="#about" role="menuitem">About</a></li>
+        <li role="none"><a href="#contact" role="menuitem">Contact</a></li>
+      </ul>
+    </nav>
 
-  <!-- Services Section -->
-  <section class="services" id="services">
-    <div class="section-header">
-      <h2>Comprehensive Security Expertise</h2>
-      <p>From strategic governance to hands-on implementation, we provide a full range of cloud infrastructure and cyber security consultancy services.</p>
-    </div>
-
-    <div class="services-grid">
-      
-      <article class="service-card">
-        <div class="icon" aria-hidden="true"><i class="fa-solid fa-chess-king"></i></div>
-        <h3>Security Strategy &amp; Governance</h3>
-        <p>Align security initiatives with your organisational goals. Develop robust governance frameworks and policies to support regulatory compliance and effective risk management.</p>
-      </article>
-      
-      <article class="service-card">
-        <div class="icon" aria-hidden="true"><i class="fa-solid fa-triangle-exclamation"></i></div>
-        <h3>Risk &amp; Supply Chain Management</h3>
-        <p>Identify, assess and mitigate internal and supply chain risks, building resilience across your technology stack, partners and suppliers.</p>
-      </article>
-      
-      <article class="service-card">
-        <div class="icon" aria-hidden="true"><i class="fa-solid fa-diagram-project"></i></div>
-        <h3>Technical Security Architecture</h3>
-        <p>Design secure on-premises, cloud and hybrid environments that follow best practice and international standards to deliver defence-in-depth.</p>
-      </article>
-      
-      <article class="service-card">
-        <div class="icon" aria-hidden="true"><i class="fa-solid fa-siren-on"></i></div>
-        <h3>Incident Detection &amp; Response</h3>
-        <p>Prepare for, detect, contain and remediate security incidents with structured response procedures that minimise impact and downtime.</p>
-      </article>
-      
-      <article class="service-card">
-        <div class="icon" aria-hidden="true"><i class="fa-solid fa-clipboard-check"></i></div>
-        <h3>Compliance &amp; Accreditation</h3>
-        <p>Get tailored support for GDPR, PCI DSS, Cyber Essentials, ISO 27001 and NIST CSF 2.0, meeting mandatory requirements efficiently and effectively.</p>
-      </article>
-      
-      <article class="service-card">
-        <div class="icon" aria-hidden="true"><i class="fa-solid fa-user-graduate"></i></div>
-        <h3>Security Awareness &amp; Training</h3>
-        <p>Empower teams with targeted training and workshops that foster a practical, security-conscious culture across your organisation.</p>
-      </article>
-
-      <article class="service-card">
-        <div class="icon" aria-hidden="true"><i class="fa-solid fa-bug-slash"></i></div>
-        <h3>Vulnerability &amp; Threat Management</h3>
-        <p>Continuously scan, assess and prioritise vulnerabilities. Use threat intelligence to address risks proactively before they are exploited.</p>
-      </article>
-
-      <article class="service-card">
-        <div class="icon" aria-hidden="true"><i class="fa-solid fa-fingerprint"></i></div>
-        <h3>Zero Trust &amp; Identity Management</h3>
-        <p>Implement modern Zero Trust principles and robust identity and access management that enforce least privilege, multi-factor authentication and segmentation to secure access.</p>
-      </article>
-
-    </div>
-  </section>
-
-  <!-- About Section -->
-  <section class="about" id="about">
-    <div class="about-container">
-      <img src="footer.webp" alt="CIaaS Security Consultancy" class="about-image" loading="lazy">
-      <div class="about-content">
-        <h2>About CIaaS</h2>
-        <p>
-          CIaaS Limited is an independent consultancy led by Terry Sullivan, a CISSP-certified security specialist with over 30 years' experience in IT and cyber security.
-        </p>
-        <p>
-          We provide strategic security and infrastructure consulting and have developed <strong>StaffID™</strong>, our workforce management and collaboration platform that enables frontline workers to securely access work applications, manage their time and tasks, and communicate with their teams, all from their personal devices.
-        </p>
-        <p>
-          Our mission is to deliver effective, sustainable security transformation that protects organisations while enabling their people to work productively and securely.
-        </p>
-        
-        <div class="credentials">
-          <span class="credential-badge">CISSP-Certified</span>
-          <span class="credential-badge">30+ Years' Experience</span>
-          <span class="credential-badge">UK Registered Company</span>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Contact Section -->
-  <section class="contact-section" id="contact">
-    <div class="contact-container">
-      <div class="contact-info">
-        <h2>Ready to Digitally Transform?</h2>
-        <p>Whether you need expert cyber security consulting or a secure workforce management platform for your frontline teams, we are here to help.</p>
-        
-        <div class="contact-details">
-          <div class="contact-item">
-            <i class="fa-solid fa-envelope" aria-hidden="true"></i>
-            <div>
-              <h3>Email Us</h3>
-              <a href="mailto:info@ciaas.com">info@ciaas.com</a>
-            </div>
-          </div>
-          
-          <div class="contact-item">
-            <i class="fa-solid fa-building" aria-hidden="true"></i>
-            <div>
-              <h3>Company Details</h3>
-              <p>CIaaS Limited<br>
-              Registered in England &amp; Wales<br>
-              Company No. 14519311</p>
-            </div>
-          </div>
-          
-          <div class="contact-item">
-            <i class="fa-solid fa-users" aria-hidden="true"></i>
-            <div>
-              <h3>StaffID™ Support</h3>
-              <p>For frontline worker setup support, visit <a href="https://staffid.uk" target="_blank" rel="noopener noreferrer">staffid.uk</a></p>
-            </div>
+    <!-- Hero Section -->
+    <main id="main">
+      <section class="hero" id="home">
+        <div class="hero-content">
+          <h1>Compliant Infrastructure as a Service</h1>
+          <p>
+            CIaaS is a UK-based cyber security and cloud infrastructure
+            consultancy, specialising in Microsoft 365 and Azure.
+          </p>
+          <p>
+            We also offer <strong>StaffID™</strong>, a secure workforce
+            management and collaboration solution for frontline and shift-based
+            employees. Track time, manage tasks, and communicate with your
+            people on their own devices - even if you don't have in-house IT.
+          </p>
+          <div class="cta-buttons">
+            <a href="#services" class="btn btn-primary">Explore Services</a>
+            <a href="#staffid" class="btn btn-secondary">Learn About StaffID</a>
           </div>
         </div>
+      </section>
+
+      <!-- Featured StaffID Section -->
+      <section class="featured" id="staffid">
+        <span class="featured-badge" role="text"
+          ><span aria-hidden="true">✨</span> New Service</span
+        >
+        <h2>Introducing StaffID™</h2>
+        <p>
+          <strong>StaffID™</strong> is a secure workforce management and
+          collaboration solution designed for frontline and shift-based workers.
+          It combines secure sign-in, push notifications, shift scheduling,
+          clock-in and clock-out, task management, timesheets and more, without
+          needing an in-house IT team.
+        </p>
+
+        <div class="featured-grid">
+          <article class="featured-card">
+            <div class="icon" aria-hidden="true">
+              <i class="fa-solid fa-shield-halved"></i>
+            </div>
+            <h3>Secure Authentication</h3>
+            <p>
+              Simple, memorable sign-in for workers with low IT literacy who are
+              accessing workplace apps on any device, backed by strong identity
+              protection.
+            </p>
+          </article>
+
+          <article class="featured-card">
+            <div class="icon" aria-hidden="true">
+              <i class="fa-solid fa-mobile-screen-button"></i>
+            </div>
+            <h3>BYOD Ready</h3>
+            <p>
+              Protection policies keep work data secure inside the apps that
+              staff use on their own devices.
+            </p>
+          </article>
+
+          <article class="featured-card">
+            <div class="icon" aria-hidden="true">
+              <i class="fa-solid fa-clock"></i>
+            </div>
+            <h3>Time &amp; Attendance</h3>
+            <p>
+              Built-in clock-in and clock-out, shift scheduling and automated
+              timesheet generation for accurate, efficient payroll.
+            </p>
+          </article>
+
+          <article class="featured-card">
+            <div class="icon" aria-hidden="true">
+              <i class="fa-solid fa-list-check"></i>
+            </div>
+            <h3>Task Management</h3>
+            <p>
+              Assign one-off and recurring tasks to individuals or teams, with
+              clear status tracking and completion notifications.
+            </p>
+          </article>
+
+          <article class="featured-card">
+            <div class="icon" aria-hidden="true">
+              <i class="fa-solid fa-comments"></i>
+            </div>
+            <h3>Team Communication</h3>
+            <p>
+              Real-time messaging, team channels and instant push notifications
+              to workers' personal mobile devices.
+            </p>
+          </article>
+
+          <article class="featured-card">
+            <div class="icon" aria-hidden="true">
+              <i class="fa-solid fa-bolt"></i>
+            </div>
+            <h3>Rapid Deployment</h3>
+            <p>
+              Get your frontline workers connected and productive quickly with a
+              streamlined onboarding process that keeps IT overhead low.
+            </p>
+          </article>
+        </div>
+
+        <div style="margin-top: 2.5rem">
+          <a
+            href="https://staffid.uk"
+            class="btn btn-primary"
+            target="_blank"
+            rel="noopener noreferrer"
+            >Visit StaffID Setup Guide →</a
+          >
+        </div>
+      </section>
+
+      <!-- Services Section -->
+      <section class="services" id="services">
+        <div class="section-header">
+          <h2>Comprehensive Security Expertise</h2>
+          <p>
+            From strategic governance to hands-on implementation, we provide a
+            full range of cloud infrastructure and cyber security consultancy
+            services.
+          </p>
+        </div>
+
+        <div class="services-grid">
+          <article class="service-card">
+            <div class="icon" aria-hidden="true">
+              <i class="fa-solid fa-chess-king"></i>
+            </div>
+            <h3>Security Strategy &amp; Governance</h3>
+            <p>
+              Align security initiatives with your organisational goals. Develop
+              robust governance frameworks and policies to support regulatory
+              compliance and effective risk management.
+            </p>
+          </article>
+
+          <article class="service-card">
+            <div class="icon" aria-hidden="true">
+              <i class="fa-solid fa-triangle-exclamation"></i>
+            </div>
+            <h3>Risk &amp; Supply Chain Management</h3>
+            <p>
+              Identify, assess and mitigate internal and supply chain risks,
+              building resilience across your technology stack, partners and
+              suppliers.
+            </p>
+          </article>
+
+          <article class="service-card">
+            <div class="icon" aria-hidden="true">
+              <i class="fa-solid fa-diagram-project"></i>
+            </div>
+            <h3>Technical Security Architecture</h3>
+            <p>
+              Design secure on-premises, cloud and hybrid environments that
+              follow best practice and international standards to deliver
+              defence-in-depth.
+            </p>
+          </article>
+
+          <article class="service-card">
+            <div class="icon" aria-hidden="true">
+              <i class="fa-solid fa-siren-on"></i>
+            </div>
+            <h3>Incident Detection &amp; Response</h3>
+            <p>
+              Prepare for, detect, contain and remediate security incidents with
+              structured response procedures that minimise impact and downtime.
+            </p>
+          </article>
+
+          <article class="service-card">
+            <div class="icon" aria-hidden="true">
+              <i class="fa-solid fa-clipboard-check"></i>
+            </div>
+            <h3>Compliance &amp; Accreditation</h3>
+            <p>
+              Get tailored support for GDPR, PCI DSS, Cyber Essentials, ISO
+              27001 and NIST CSF 2.0, meeting mandatory requirements efficiently
+              and effectively.
+            </p>
+          </article>
+
+          <article class="service-card">
+            <div class="icon" aria-hidden="true">
+              <i class="fa-solid fa-user-graduate"></i>
+            </div>
+            <h3>Security Awareness &amp; Training</h3>
+            <p>
+              Empower teams with targeted training and workshops that foster a
+              practical, security-conscious culture across your organisation.
+            </p>
+          </article>
+
+          <article class="service-card">
+            <div class="icon" aria-hidden="true">
+              <i class="fa-solid fa-bug-slash"></i>
+            </div>
+            <h3>Vulnerability &amp; Threat Management</h3>
+            <p>
+              Continuously scan, assess and prioritise vulnerabilities. Use
+              threat intelligence to address risks proactively before they are
+              exploited.
+            </p>
+          </article>
+
+          <article class="service-card">
+            <div class="icon" aria-hidden="true">
+              <i class="fa-solid fa-fingerprint"></i>
+            </div>
+            <h3>Zero Trust &amp; Identity Management</h3>
+            <p>
+              Implement modern Zero Trust principles and robust identity and
+              access management that enforce least privilege, multi-factor
+              authentication and segmentation to secure access.
+            </p>
+          </article>
+        </div>
+      </section>
+
+      <!-- About Section -->
+      <section class="about" id="about">
+        <div class="about-container">
+          <img
+            src="footer.webp"
+            alt="CIaaS Security Consultancy"
+            class="about-image"
+            loading="lazy"
+          />
+          <div class="about-content">
+            <h2>About CIaaS</h2>
+            <p>
+              CIaaS Limited is an independent consultancy led by Terry Sullivan,
+              a CISSP-certified security specialist with over 30 years'
+              experience in IT and cyber security.
+            </p>
+            <p>
+              We provide strategic security and infrastructure consulting and
+              have developed <strong>StaffID™</strong>, our workforce management
+              and collaboration solution that enables frontline workers to
+              securely access work applications, manage their time and tasks,
+              and communicate with their teams, all from their personal devices.
+            </p>
+            <p>
+              Our mission is to deliver effective, sustainable security
+              transformation that protects organisations while enabling their
+              people to work productively and securely.
+            </p>
+
+            <div class="credentials">
+              <span class="credential-badge">CISSP-Certified</span>
+              <span class="credential-badge">30+ Years' Experience</span>
+              <span class="credential-badge">UK Registered Company</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Contact Section -->
+      <section class="contact-section" id="contact">
+        <div class="contact-container">
+          <div class="contact-info">
+            <h2>Ready for Digital Transformation?</h2>
+            <p>
+              Whether you need expert cyber security consulting or a secure
+              workforce management solution for your frontline teams, we are
+              here to help.
+            </p>
+
+            <div class="contact-details">
+              <div class="contact-item">
+                <i class="fa-solid fa-envelope" aria-hidden="true"></i>
+                <div>
+                  <h3>Email Us</h3>
+                  <a href="mailto:info@ciaas.com">info@ciaas.com</a>
+                </div>
+              </div>
+
+              <div class="contact-item">
+                <i class="fa-solid fa-building" aria-hidden="true"></i>
+                <div>
+                  <h3>Company Details</h3>
+                  <p>
+                    CIaaS Limited<br />
+                    Registered in England &amp; Wales<br />
+                    Company No. 14519311
+                  </p>
+                </div>
+              </div>
+
+              <div class="contact-item">
+                <i class="fa-solid fa-users" aria-hidden="true"></i>
+                <div>
+                  <h3>StaffID™ Support</h3>
+                  <p>
+                    For frontline worker setup support, visit
+                    <a
+                      href="https://staffid.uk"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      >staffid.uk</a
+                    >
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="contact-form-wrapper">
+            <h3>Send us a message</h3>
+            <form
+              class="contact-form"
+              action="https://formsubmit.co/info@ciaas.com"
+              method="POST"
+            >
+              <!-- FormSubmit Configuration -->
+              <input
+                type="hidden"
+                name="_subject"
+                value="New enquiry from CIaaS website"
+              />
+              <input type="hidden" name="_captcha" value="false" />
+              <input type="hidden" name="_template" value="table" />
+              <input type="text" name="_honey" style="display: none" />
+
+              <div class="form-group">
+                <label for="name"
+                  >Name <span aria-label="required">*</span></label
+                >
+                <input
+                  type="text"
+                  id="name"
+                  name="name"
+                  placeholder="Your name"
+                  required
+                  aria-required="true"
+                />
+              </div>
+
+              <div class="form-group">
+                <label for="email"
+                  >Email <span aria-label="required">*</span></label
+                >
+                <input
+                  type="email"
+                  id="email"
+                  name="email"
+                  placeholder="your@email.com"
+                  required
+                  aria-required="true"
+                />
+              </div>
+
+              <div class="form-group">
+                <label for="subject"
+                  >Subject <span aria-label="required">*</span></label
+                >
+                <input
+                  type="text"
+                  id="subject"
+                  name="subject"
+                  placeholder="How can we help?"
+                  required
+                  aria-required="true"
+                />
+              </div>
+
+              <div class="form-group">
+                <label for="message"
+                  >Message <span aria-label="required">*</span></label
+                >
+                <textarea
+                  id="message"
+                  name="message"
+                  placeholder="Tell us about your requirements..."
+                  required
+                  aria-required="true"
+                ></textarea>
+              </div>
+
+              <div class="form-submit">
+                <button type="submit" class="btn btn-primary">
+                  Send Message
+                </button>
+              </div>
+
+              <p class="form-note">
+                We'll respond within 24 hours during business days
+              </p>
+            </form>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- Footer -->
+    <footer role="contentinfo">
+      <div class="footer-content">
+        <div class="footer-section">
+          <h4>CIaaS Limited</h4>
+          <p>Independent cyber security consultancy</p>
+          <p>Registered in England &amp; Wales</p>
+          <p>Company No. 14519311</p>
+        </div>
+
+        <div class="footer-section">
+          <h4>Services</h4>
+          <a href="#services">Security Strategy and Governance</a>
+          <a href="#staffid">StaffID™ Workforce Management</a>
+          <a href="#services">Compliance and Risk Management</a>
+          <a href="#services">Technical Security Architecture</a>
+        </div>
+
+        <div class="footer-section">
+          <h4>Resources</h4>
+          <a href="https://staffid.uk" target="_blank" rel="noopener noreferrer"
+            >StaffID™ Setup Guide</a
+          >
+          <a href="#services">Service Overview</a>
+          <a href="#about">About Us</a>
+        </div>
+
+        <div class="footer-section">
+          <h4>Contact</h4>
+          <a href="mailto:info@ciaas.com">info@ciaas.com</a>
+          <p style="margin-top: 1rem">
+            For frontline worker setup support, visit
+            <a
+              href="https://staffid.uk"
+              target="_blank"
+              rel="noopener noreferrer"
+              >staffid.uk</a
+            >
+          </p>
+        </div>
       </div>
 
-      <div class="contact-form-wrapper">
-        <h3>Send us a message</h3>
-        <form class="contact-form" action="https://formsubmit.co/info@ciaas.com" method="POST">
-          <!-- FormSubmit Configuration -->
-          <input type="hidden" name="_subject" value="New enquiry from CIaaS website">
-          <input type="hidden" name="_captcha" value="false">
-          <input type="hidden" name="_template" value="table">
-          <input type="text" name="_honey" style="display:none">
-          
-          <div class="form-group">
-            <label for="name">Name <span aria-label="required">*</span></label>
-            <input type="text" id="name" name="name" placeholder="Your name" required aria-required="true">
-          </div>
-          
-          <div class="form-group">
-            <label for="email">Email <span aria-label="required">*</span></label>
-            <input type="email" id="email" name="email" placeholder="your@email.com" required aria-required="true">
-          </div>
-          
-          <div class="form-group">
-            <label for="subject">Subject <span aria-label="required">*</span></label>
-            <input type="text" id="subject" name="subject" placeholder="How can we help?" required aria-required="true">
-          </div>
-          
-          <div class="form-group">
-            <label for="message">Message <span aria-label="required">*</span></label>
-            <textarea id="message" name="message" placeholder="Tell us about your requirements..." required aria-required="true"></textarea>
-          </div>
-          
-          <div class="form-submit">
-            <button type="submit" class="btn btn-primary">Send Message</button>
-          </div>
-          
-          <p class="form-note">We'll respond within 24 hours during business days</p>
-        </form>
+      <div class="footer-bottom">
+        <p>
+          &copy; 2025 CIaaS Limited. All rights reserved. CIaaS® and StaffID™
+          are trademarks of CIaaS Limited.
+        </p>
+        <p style="margin-top: 0.5rem; font-size: 0.85rem">
+          Microsoft®, Teams®, and related trademarks are property of Microsoft
+          Corporation.
+        </p>
       </div>
-    </div>
-  </section>
-</main>
+    </footer>
 
-<!-- Footer -->
-<footer role="contentinfo">
-  <div class="footer-content">
-    <div class="footer-section">
-      <h4>CIaaS Limited</h4>
-      <p>Independent cyber security consultancy</p>
-      <p>Registered in England &amp; Wales</p>
-      <p>Company No. 14519311</p>
-    </div>
-    
-    <div class="footer-section">
-      <h4>Services</h4>
-      <a href="#services">Security Strategy and Governance</a>
-      <a href="#staffid">StaffID™ Workforce Management</a>
-      <a href="#services">Compliance and Risk Management</a>
-      <a href="#services">Technical Security Architecture</a>
-    </div>
-    
-    <div class="footer-section">
-      <h4>Resources</h4>
-      <a href="https://staffid.uk" target="_blank" rel="noopener noreferrer">StaffID™ Setup Guide</a>
-      <a href="#services">Service Overview</a>
-      <a href="#about">About Us</a>
-    </div>
-    
-    <div class="footer-section">
-      <h4>Contact</h4>
-      <a href="mailto:info@ciaas.com">info@ciaas.com</a>
-      <p style="margin-top: 1rem;">For frontline worker setup support, visit <a href="https://staffid.uk" target="_blank" rel="noopener noreferrer">staffid.uk</a></p>
-    </div>
-  </div>
-  
-  <div class="footer-bottom">
-    <p>&copy; 2025 CIaaS Limited. All rights reserved. CIaaS® and StaffID™ are trademarks of CIaaS Limited.</p>
-    <p style="margin-top: 0.5rem; font-size: 0.85rem;">Microsoft®, Teams®, and related trademarks are property of Microsoft Corporation.</p>
-  </div>
-</footer>
+    <script>
+      // Page Loader
+      window.addEventListener("load", function () {
+        const loader = document.getElementById("page-loader");
+        setTimeout(() => {
+          loader.classList.add("hidden");
+        }, 500);
+      });
 
-<script>
-  // Page Loader
-  window.addEventListener('load', function() {
-    const loader = document.getElementById('page-loader');
-    setTimeout(() => {
-      loader.classList.add('hidden');
-    }, 500);
-  });
+      // Mobile Navigation Toggle
+      const navToggle = document.getElementById("navToggle");
+      const navMenu = document.getElementById("navMenu");
+      const navLinks = navMenu.querySelectorAll("a");
 
-  // Mobile Navigation Toggle
-  const navToggle = document.getElementById('navToggle');
-  const navMenu = document.getElementById('navMenu');
-  const navLinks = navMenu.querySelectorAll('a');
+      navToggle.addEventListener("click", function () {
+        const isExpanded = navToggle.getAttribute("aria-expanded") === "true";
+        navToggle.setAttribute("aria-expanded", !isExpanded);
+        navMenu.classList.toggle("active");
 
-  navToggle.addEventListener('click', function() {
-    const isExpanded = navToggle.getAttribute('aria-expanded') === 'true';
-    navToggle.setAttribute('aria-expanded', !isExpanded);
-    navMenu.classList.toggle('active');
-    
-    // Prevent body scroll when menu is open
-    document.body.style.overflow = isExpanded ? '' : 'hidden';
-  });
+        // Prevent body scroll when menu is open
+        document.body.style.overflow = isExpanded ? "" : "hidden";
+      });
 
-  // Close mobile menu when clicking a link
-  navLinks.forEach(link => {
-    link.addEventListener('click', function() {
-      navMenu.classList.remove('active');
-      navToggle.setAttribute('aria-expanded', 'false');
-      document.body.style.overflow = '';
-    });
-  });
-
-  // Close mobile menu when clicking outside
-  document.addEventListener('click', function(event) {
-    if (!navToggle.contains(event.target) && !navMenu.contains(event.target)) {
-      navMenu.classList.remove('active');
-      navToggle.setAttribute('aria-expanded', 'false');
-      document.body.style.overflow = '';
-    }
-  });
-
-  // Add scroll effect to navbar
-  window.addEventListener('scroll', function() {
-    const navbar = document.getElementById('navbar');
-    if (window.scrollY > 50) {
-      navbar.classList.add('scrolled');
-    } else {
-      navbar.classList.remove('scrolled');
-    }
-  });
-
-  // Intersection Observer for card animations
-  const observerOptions = {
-    threshold: 0.1,
-    rootMargin: '0px 0px -50px 0px'
-  };
-
-  const observer = new IntersectionObserver(function(entries) {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        entry.target.classList.add('animate-in');
-        observer.unobserve(entry.target);
-      }
-    });
-  }, observerOptions);
-
-  document.addEventListener('DOMContentLoaded', function() {
-    const featuredCards = document.querySelectorAll('.featured-card');
-    const serviceCards = document.querySelectorAll('.service-card');
-    
-    featuredCards.forEach(card => observer.observe(card));
-    serviceCards.forEach(card => observer.observe(card));
-  });
-
-  // Smooth scroll with offset for fixed navbar
-  document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-    anchor.addEventListener('click', function (e) {
-      e.preventDefault();
-      const targetId = this.getAttribute('href');
-      if (targetId === '#') return;
-      
-      const target = document.querySelector(targetId);
-      if (target) {
-        const navbarHeight = document.getElementById('navbar').offsetHeight;
-        const targetPosition = target.offsetTop - navbarHeight;
-        
-        window.scrollTo({
-          top: targetPosition,
-          behavior: 'smooth'
+      // Close mobile menu when clicking a link
+      navLinks.forEach((link) => {
+        link.addEventListener("click", function () {
+          navMenu.classList.remove("active");
+          navToggle.setAttribute("aria-expanded", "false");
+          document.body.style.overflow = "";
         });
-      }
-    });
-  });
-</script>
+      });
 
-</body>
+      // Close mobile menu when clicking outside
+      document.addEventListener("click", function (event) {
+        if (
+          !navToggle.contains(event.target) &&
+          !navMenu.contains(event.target)
+        ) {
+          navMenu.classList.remove("active");
+          navToggle.setAttribute("aria-expanded", "false");
+          document.body.style.overflow = "";
+        }
+      });
+
+      // Add scroll effect to navbar
+      window.addEventListener("scroll", function () {
+        const navbar = document.getElementById("navbar");
+        if (window.scrollY > 50) {
+          navbar.classList.add("scrolled");
+        } else {
+          navbar.classList.remove("scrolled");
+        }
+      });
+
+      // Intersection Observer for card animations
+      const observerOptions = {
+        threshold: 0.1,
+        rootMargin: "0px 0px -50px 0px",
+      };
+
+      const observer = new IntersectionObserver(function (entries) {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("animate-in");
+            observer.unobserve(entry.target);
+          }
+        });
+      }, observerOptions);
+
+      document.addEventListener("DOMContentLoaded", function () {
+        const featuredCards = document.querySelectorAll(".featured-card");
+        const serviceCards = document.querySelectorAll(".service-card");
+
+        featuredCards.forEach((card) => observer.observe(card));
+        serviceCards.forEach((card) => observer.observe(card));
+      });
+
+      // Smooth scroll with offset for fixed navbar
+      document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
+        anchor.addEventListener("click", function (e) {
+          e.preventDefault();
+          const targetId = this.getAttribute("href");
+          if (targetId === "#") return;
+
+          const target = document.querySelector(targetId);
+          if (target) {
+            const navbarHeight = document.getElementById("navbar").offsetHeight;
+            const targetPosition = target.offsetTop - navbarHeight;
+
+            window.scrollTo({
+              top: targetPosition,
+              behavior: "smooth",
+            });
+          }
+        });
+      });
+    </script>
+  </body>
 </html>
